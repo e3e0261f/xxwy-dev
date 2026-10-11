@@ -1,0 +1,16 @@
+# Trunk.toml - Bevy Wasm 打包配置
+[watch]
+# 监听 Rust 源码目录与资产目录
+watch = ["rust_src", "assets"]
+
+# 忽略缓存和生成的隐藏文件
+ignore = [
+    "target",
+    ".git",
+    "node_modules",
+    "dist"
+]
+
+[serve]
+port = 8080
+open = false

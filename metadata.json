@@ -1,0 +1,8 @@
+{
+  "name": "仙侠物语 - Xianxia Chronicles",
+  "description": "An immersive 2D pixel art Xianxia (immortal cultivation) RPG featuring martial exploration, realm breakthroughs, spells, alchemy, and spirit pet encounters, built from the xxwy project assets.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

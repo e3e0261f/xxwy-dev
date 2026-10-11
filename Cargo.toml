@@ -1,0 +1,33 @@
+[package]
+name = "xianxia_game"
+version = "0.1.0"
+edition = "2021"
+description = "青城 (Qk) 修仙大世界 - 2D 像素风无字化修仙引擎"
+
+[[bin]]
+name = "xianxia_game"
+path = "rust_src/main.rs"
+
+[dependencies]
+# Bevy 0.19.1 核心 ECS 引擎 (WebGL2 目标优化)
+bevy = { version = "0.19.1", default-features = false, features = [
+    "2d",
+    "bevy_sprite",
+    "bevy_render",
+    "bevy_core_pipeline",
+    "bevy_winit",
+    "png",
+    "webgl2"
+] }
+bevy_egui = "0.42.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+
+# 开发模式下的配置：对业务代码低优化（编译极快），但对 bevy 和 egui 开满 3 级优化（运行极快）
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+opt-level = 'z'     # 优化体积
+lto = true          # 跨包链接优化
+codegen-units = 1
